@@ -16,6 +16,6 @@ Depending on your use case some features may or may not be available to you, thi
 Just set the `TOKEN` variable
 
 ## Banks and Businesses 
-Set the `clientId`, `secret` and `clientRedirectUri` variables and use [this guide](https://api-docs.transferwise.com/v1/api-basics/authentication-and-headers#authentication-for-banks-and-businesses) to get a token for a user.
+Set the `clientId`, `secret` and `clientRedirectUri` variables and use [this guide](https://api-docs.transferwise.com/#bank-integrations-guide) to get a token for a user.
 
 The OAuth token generation endpoints (`/oauth/token`) have tests that automatically set your `REFRESH` and `TOKEN` variables when you sucessfully generate them
