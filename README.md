@@ -27,4 +27,4 @@ To obtain access tokens:
 2) Open Settings —> API Tokens, Create your API access token
 
 This token is ready to be used for making API calls.
-Good things to know before start testing: https://api-docs.transferwise.com/#borderless-payouts-guide-getting-started
+Good things to know before you start testing: https://api-docs.transferwise.com/#borderless-payouts-guide-getting-started
