@@ -6,10 +6,10 @@
 	},
 	"item": [
 		{
-			"name": "Borderless",
+			"name": "borderless",
 			"item": [
 				{
-					"name": "GET Accounts",
+					"name": "GET /borderless-accounts",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -43,7 +43,7 @@
 					"response": []
 				},
 				{
-					"name": "GET statement",
+					"name": "GET /borderless-accounts/{accountId}/statement",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -85,12 +85,12 @@
 								}
 							]
 						},
-						"description": "Get Accounts\n"
+						"description": "Get account statement\n"
 					},
 					"response": []
 				},
 				{
-					"name": "GET Available Currencies",
+					"name": "GET /borderless-accounts/balance-currencies",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -114,32 +114,7 @@
 								"balance-currencies"
 							]
 						},
-						"description": "Get Accounts\n"
-					},
-					"response": []
-				},
-				{
-					"name": "GET balance-currencies",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{TOKEN}}"
-							}
-						],
-						"body": {},
-						"url": {
-							"raw": "{{host}}/v1/borderless-accounts/balance-currencies",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"v1",
-								"borderless-accounts",
-								"balance-currencies"
-							]
-						}
+						"description": "Get available currencies the user can open\n"
 					},
 					"response": []
 				}
@@ -334,7 +309,7 @@
 					"response": []
 				},
 				{
-					"name": "GET /accounts{id}",
+					"name": "GET /accounts/{id}",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -915,7 +890,7 @@
 			"name": "delivery estimation",
 			"item": [
 				{
-					"name": "GET delivery estimate",
+					"name": "GET Delivery Estimate",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1210,7 +1185,7 @@
 					"response": []
 				},
 				{
-					"name": "refresh token ",
+					"name": "Access Toekn from Refresh Token",
 					"event": [
 						{
 							"listen": "test",
@@ -1445,205 +1420,7 @@
 							]
 						}
 					},
-					"response": [
-						{
-							"name": "POST /quotes",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer {{TOKEN}}"
-									},
-									{
-										"key": "Content-type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{ \n    \"source\": \"GBP\",\n    \"target\": \"CAD\",\n    \"sourceAmount\": \"0.1\",\n    \"rateType\": \"FIXED\"\n}"
-								},
-								"url": {
-									"raw": "{{host}}/v1/quotes",
-									"host": [
-										"{{host}}"
-									],
-									"path": [
-										"v1",
-										"quotes"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "x-requested-with, Content-Type, x-authorization-key, x-authorization-token, Accept-Language, Authorization, X-idempotence-uuid, X-Language, X-Frame-Options",
-									"name": "Access-Control-Allow-Headers",
-									"description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request."
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "POST, GET, PUT, OPTIONS, PATCH, DELETE",
-									"name": "Access-Control-Allow-Methods",
-									"description": "Specifies the method or methods allowed when accessing the resource. This is used in response to a preflight request."
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*",
-									"name": "Access-Control-Allow-Origin",
-									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "3600",
-									"name": "Access-Control-Max-Age",
-									"description": "Indicates how long the results of a preflight request can be cached in seconds."
-								},
-								{
-									"key": "CF-RAY",
-									"value": "4306f31bba712c18-AMS",
-									"name": "CF-RAY",
-									"description": "Custom header"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate",
-									"name": "Cache-Control",
-									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate",
-									"name": "Cache-Control",
-									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive",
-									"name": "Connection",
-									"description": "Options that are desired for the connection"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 25 Jun 2018 11:03:48 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "Expect-CT",
-									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
-									"name": "Expect-CT",
-									"description": "Custom header"
-								},
-								{
-									"key": "Expires",
-									"value": "0",
-									"name": "Expires",
-									"description": "Gives the date/time after which the response is considered stale"
-								},
-								{
-									"key": "Expires",
-									"value": "0",
-									"name": "Expires",
-									"description": "Gives the date/time after which the response is considered stale"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache",
-									"name": "Pragma",
-									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache",
-									"name": "Pragma",
-									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-								},
-								{
-									"key": "Server",
-									"value": "cloudflare",
-									"name": "Server",
-									"description": "A name for the server"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000",
-									"name": "Strict-Transport-Security",
-									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked",
-									"name": "Transfer-Encoding",
-									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff",
-									"name": "X-Content-Type-Options",
-									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY",
-									"name": "X-Frame-Options",
-									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY",
-									"name": "X-Frame-Options",
-									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-								},
-								{
-									"key": "X-NewRelic-App-Data",
-									"value": "PxQGWVVSDAITVlVaAgMOUlITGhE1AwE2QgNWEVlbQFtcC2VOYhFBCwpRdA4IF0pcXAgEEGseRhMLRVNvTRBSPh8TTQ1MXUcSGzV2MmVIEU5UGAdNVk0NBQhRWFQEBxtRVR0UBQQHAFIAVgFUDgoCBAoBDUMdB1IOF1Nq",
-									"name": "X-NewRelic-App-Data",
-									"description": "Custom header"
-								},
-								{
-									"key": "X-Request-ID",
-									"value": "6c90cf7e-d7b4-4c62-8119-5f331fff87ae",
-									"name": "X-Request-ID",
-									"description": "Custom header"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block",
-									"name": "X-XSS-Protection",
-									"description": "Cross-site scripting (XSS) filter"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block",
-									"name": "X-XSS-Protection",
-									"description": "Cross-site scripting (XSS) filter"
-								}
-							],
-							"cookie": [
-								{
-									"expires": "Sat Jun 22 2019 10:25:10 GMT+0100 (BST)",
-									"httpOnly": true,
-									"domain": "transferwise.com",
-									"path": "/",
-									"secure": false,
-									"value": "de3ca255d24bc04ead1db47ff0ebf27801529659510",
-									"key": "__cfduid"
-								}
-							],
-							"body": "{\"id\":6264903,\"source\":\"GBP\",\"target\":\"CAD\",\"sourceAmount\":0.1,\"targetAmount\":0.0,\"type\":\"REGULAR\",\"rate\":1.76444,\"createdTime\":\"2018-06-25T11:03:48.342Z\",\"createdByUserId\":3449663,\"profile\":2366958,\"rateType\":\"FIXED\",\"deliveryEstimate\":\"2018-06-26T12:00:00Z\",\"fee\":0.8,\"errors\":[{\"code\":\"error.quote.targetAmount.min\",\"message\":\"Target amount must be at least 0.01 CAD\",\"path\":\"targetAmount\",\"arguments\":[{\"amount\":0.01,\"currency\":\"CAD\"}]}],\"allowedProfileTypes\":[\"PERSONAL\",\"BUSINESS\"],\"guaranteedTargetAmount\":false,\"ofSourceAmount\":true}"
-						}
-					]
+					"response": []
 				},
 				{
 					"name": "GET /quotes/{id}/pay-in-methods",
@@ -1869,7 +1646,7 @@
 					"response": []
 				},
 				{
-					"name": "POST v2/user",
+					"name": "POST /v2/user",
 					"request": {
 						"method": "POST",
 						"header": [
