@@ -15,7 +15,16 @@ Depending on your use case some features may or may not be available to you, thi
 ## Personal Token users
 Just set the `TOKEN` variable
 
-## Banks and Businesses 
+## Banks 
 Set the `clientId`, `secret` and `clientRedirectUri` variables and use [this guide](https://api-docs.transferwise.com/#bank-integrations-guide) to get a token for a user.
 
 The OAuth token generation endpoints (`/oauth/token`) have tests that automatically set your `REFRESH` and `TOKEN` variables when you sucessfully generate them
+
+## Businesses
+You can get a personal token on the Settings page of your TransferWise account.
+To obtain access tokens:
+1) Login to your account
+2) Open Settings —> API Tokens, Create your API access token
+
+This token is ready to be used for making API calls.
+Good things to know before start testing: https://api-docs.transferwise.com/#borderless-payouts-guide-getting-started
