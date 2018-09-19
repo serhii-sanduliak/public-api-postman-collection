@@ -1,5 +1,5 @@
 # TransferWise API Postman collection
-A Postman collection containing example requests to demonstrate and test the [TransferWise public API](https://api.transferwise.com).
+A Postman collection containing example requests to demonstrate and test the [TransferWise public API](https://api-docs.transferwise.com/#transferwise-api).
 
 For use with the Postman client: [download it here](https://www.getpostman.com/).
 
